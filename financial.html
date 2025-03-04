@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculators</title>
+    <link rel="stylesheet" href="financial_calculator.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/allinone.jpg" alt="Logo"></a>
+            </div>
+            <div class="logo-text">@ALLINONECALCULATOR</div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </header>
+   
+    <section class="features">
+        <div>
+            <h1 class="section-title">FINANCIAL CALCULATORS</h1>
+        </div>
+    
+        <div class="services-container">
+             <!-- Simple Interest Calculator Feature -->
+            <div class="services" id="simple-interest" data-target="simple-interest-calculator">
+                <div class="services-icon">
+                    <a href="#"><img src="images/SI.png" alt="SI Calculator" /></a>
+                </div>
+                <h3 class="services-title">Simple Interest Calculator</h3>
+            </div>
+    
+            <!-- Compound Interest Calculator Feature -->
+            <div class="services" id="compound-interest" data-target="compound-interest-calculator">
+                <div class="services-icon">
+                    <a href="#"><img src="images/CI.png" alt="CI Calculator" /></a>
+                </div>
+                <h3 class="services-title">Compound Interest Calculator</h3>
+            </div>
+    
+            <!-- Currency Calculator Feature -->
+            <div class="services" id="currency-calculator" data-target="currency-calculator-section">
+                <div class="services-icon">
+                   <a href="#"> <img src="images/Currency.jpeg" alt="Currency Calculator" /></a>
+                </div>
+                <h3 class="services-title">Currency Calculator</h3>
+            </div>
+    
+            <!-- Salary Calculator Feature -->
+            <div class="services" id="salary-calculator" data-target="salary-calculator-section">
+                <div class="services-icon">
+                    <a href="#"><img src="images/Salary.jpeg" alt="Salary Calculator" /></a>
+                </div>
+                <h3 class="services-title">Salary Calculator</h3>
+            </div>
+
+            <!-- Retirement Calculator Feature -->
+            <div class="services" id="retirement" data-target="retirement-calculator-section">
+                <div class="services-icon">
+                    <a href="#"><img src="images/retire.jpeg" alt="Retirement Calculator" /></a>
+                </div>
+                <h3 class="services-title">Retirement Calculator</h3>
+            </div>
+
+            <!-- Sales & Tax  Calculator Feature -->
+            <div class="services" id="sales-tax" data-target="sales-calculator-section">
+                <div class="services-icon">
+                    <a href="#"><img src="images/ST.jpeg" alt="Sales & Tax Calculator" /></a>
+                </div>
+                <h3 class="services-title">Sales & Tax Calculator</h3>
+            </div>
+
+            <!-- Investment Calculator Feature -->
+            <div class="services" id="investment" data-target="investment-calculator-section">
+                <div class="services-icon">
+                    <a href="#"><img src="images/Investment.jpeg" alt="Investment Calculator" /></a>
+                </div>
+                <h3 class="services-title">Investment Calculator</h3>
+            </div>
+            
+        </div>
+    </section>
+
+    <main style="display: none;">
+        <!-- Simple Interest Calculator -->
+        <section class="financial-calculator" id="simple-interest-calculator">
+            <h2>Simple Interest Calculator</h2>
+            <form id="simple-interest-form">
+                <input type="number" id="si-principal" placeholder="Principal Amount">
+                <input type="number" id="si-rate" placeholder="Interest Rate (%)">
+                <input type="number" id="si-time" placeholder="Time (years)">
+                <button type="button" onclick="calculateSimpleInterest()">Calculate</button>
+                <p id="si-result"></p>
+            </form>
+        </section>
+
+        <!-- Compound Interest Calculator -->
+        <section class="financial-calculator" id="compound-interest-calculator">
+            <h2>Compound Interest Calculator</h2>
+            <form id="compound-interest-form">
+                <input type="number" id="ci-principal" placeholder="Principal Amount">
+                <input type="number" id="ci-rate" placeholder="Interest Rate (%)">
+                <input type="number" id="ci-time" placeholder="Time (years)">
+                <select id="ci-frequency">
+                    <option value="1">Annually</option>
+                    <option value="4">Quarterly</option>
+                    <option value="12">Monthly</option>
+                </select>
+                <button type="button" onclick="calculateCompoundInterest()">Calculate</button>
+                <p id="ci-result"></p>
+            </form>
+        </section>
+
+        <!-- Currency Calculator -->
+        <section class="financial-calculator" id="currency-calculator-section">
+            <h2>Currency Calculator</h2>
+            <form id="currency-converter-form">
+                <input type="number" id="currency-amount" placeholder="Amount">
+                <select id="currency-from">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+                <select id="currency-to">
+                    <option value="INR">INR</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                <button type="button" onclick="convertCurrency()">Convert</button>
+                <p id="currency-result"></p>
+            </form>
+        </section>
+
+        <!-- Salary Calculator -->
+        <section class="financial-calculator" id="salary-calculator-section">
+            <h2>Salary Calculator</h2>
+            <form id="salary-calculator-form">
+                <input type="number" id="gross-salary" placeholder="Gross Salary">
+                <input type="number" id="deductions" placeholder="Deductions">
+                <input type="number" id="bonuses" placeholder="Bonuses">
+                <button type="button" onclick="calculateNetSalary()">Calculate</button>
+                <p id="salary-result"></p>
+            </form>
+        </section>
+
+        <!-- Retirement Calculator -->
+        <section class="financial-calculator" id="retirement-calculator-section">
+            <h2>Retirement Calculator</h2>
+            <form id="retirement-form">
+                <input type="number" id="current-age" placeholder="Current Age">
+                <input type="number" id="retirement-age" placeholder="Retirement Age">
+                <input type="number" id="savings" placeholder="Current Savings">
+                <input type="number" id="return-rate" placeholder="Expected Return Rate (%)">
+                <button type="button" onclick="calculateRetirementCorpus()">Calculate</button>
+                <p id="retirement-result"></p>
+            </form>
+        </section>
+
+        <!-- Sales and Tax Calculator -->
+        <section class="financial-calculator" id="sales-calculator-section">
+            <h2>Sales and Tax Calculator</h2>
+            <form id="sales-tax-form">
+                <input type="number" id="price" placeholder="Price">
+                <input type="number" id="tax-rate" placeholder="Tax Rate (%)">
+                <button type="button" onclick="calculateSalesTax()">Calculate</button>
+                <p id="sales-tax-result"></p>
+            </form>
+        </section>
+
+        <!-- Investment Calculator -->
+        <section class="financial-calculator" id="investment-calculator-section">
+            <h2>Investment Calculator</h2>
+            <form id="investment-form">
+                <input type="number" id="initial-investment" placeholder="Initial Investment">
+                <input type="number" id="contributions" placeholder="Periodic Contributions">
+                <input type="number" id="investment-return-rate" placeholder="Return Rate (%)">
+                <input type="number" id="investment-time" placeholder="Time (years)">
+                <button type="button" onclick="calculateInvestmentReturns()">Calculate</button>
+                <p id="investment-result"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="index.html">© All-In-One Calculator</a></p>
+        <p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
